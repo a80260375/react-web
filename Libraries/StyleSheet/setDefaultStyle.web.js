@@ -5,6 +5,10 @@
  */
 'use strict';
 
+//imweb fix
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
+
+
 function appendSytle({
   reference,
   rootClassName,
@@ -56,6 +60,9 @@ function appendSytle({
 }
 
 function setDefaultStyle(options) {
+
+  if (!_ExecutionEnvironment.canUseDOM) return;
+
   var metaEl = document.querySelector('meta[name="viewport"]');
   if (!metaEl) {
     return console.warn('Viewport meta not set');

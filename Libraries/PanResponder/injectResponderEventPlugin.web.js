@@ -4,6 +4,8 @@
  *
  */
 'use strict';
+//imweb fix
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
 
 import EventPluginRegistry from 'react/lib/EventPluginRegistry';
 import ResponderEventPlugin from 'react/lib/ResponderEventPlugin';
@@ -32,7 +34,8 @@ eventTypes.moveShouldSetResponder.dependencies = [
 ['responderStart', 'responderMove', 'responderEnd', 'responderRelease',
 'responderTerminationRequest', 'responderGrant', 'responderReject', 'responderTerminate'].forEach((type) => {
   let dependencies;
-  if ('ontouchstart' in window) {
+
+  if (_ExecutionEnvironment.canUseDOM && 'ontouchstart' in window) {
     dependencies = [
       topLevelTypes.topTouchStart,
       topLevelTypes.topTouchCancel,

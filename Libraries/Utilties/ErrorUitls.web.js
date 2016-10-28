@@ -8,6 +8,9 @@
  * @providesModule ReactErrorUtils
  */
 
+//imweb fix
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
+
 /* eslint global-strict:0 */
 (function(global) {
   var ErrorUtils = {
@@ -83,6 +86,6 @@
   }
 
   setupErrorGuard();
-})(window);
+})(!_ExecutionEnvironment.canUseDOM ? global : window);
 
 module.exports = ErrorUtils;

@@ -5,17 +5,18 @@
  * @providesModule ReactDimensions
  */
 'use strict';
-
+//imweb fix
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
 let dimensions = {
   // Not map to real window size, because that map to screen size in native env.
   window: {
-    get width() { return document.documentElement.clientWidth },
-    get height() { return document.documentElement.clientHeight },
-    get scale() { return window.devicePixelRatio || 1 },
+    get width() { return !_ExecutionEnvironment.canUseDOM ? 0 : document.documentElement.clientWidth },
+    get height() { return !_ExecutionEnvironment.canUseDOM ? 0 : document.documentElement.clientHeight },
+    get scale() { return !_ExecutionEnvironment.canUseDOM ? 0 : (window.devicePixelRatio || 1) },
   },
   modalFullscreenView: {
-    width: screen.width,
-    height: screen.height
+    width: !_ExecutionEnvironment.canUseDOM ? 0 : screen.width,
+    height: !_ExecutionEnvironment.canUseDOM ? 0 : screen.height
   }
 };
 

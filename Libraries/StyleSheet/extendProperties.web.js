@@ -8,6 +8,9 @@
 import getVendorPropertyName from 'domkit/getVendorPropertyName';
 import CSSProperty from 'CSSProperty';
 
+//imweb fix
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
+
 var shorthandProperties = {
   margin: true,
   padding: true,
@@ -61,17 +64,21 @@ var oldFlexboxValues = {
   'space-around': 'distribute',
 };
 
-var builtinStyle = document.createElement('div').style;
+//imweb fix
+var builtinStyle =
+  !_ExecutionEnvironment.canUseDOM ? {} : document.createElement('div').style;
 var flexboxSpec;
 if ('alignSelf' in builtinStyle) flexboxSpec = 'final';
 else if ('webkitAlignSelf' in builtinStyle) flexboxSpec = 'finalVendor';
 else flexboxSpec = '2009';
 
 // FIXME: UCBrowser is cheat
-const isUCBrowser = /UCBrowser/i.test(navigator.userAgent);
+//imweb fix
+const isUCBrowser = !_ExecutionEnvironment.canUseDOM ? false : /UCBrowser/i.test(navigator.userAgent);
 if (isUCBrowser) flexboxSpec = '2009';
 
-const isIE = /Trident/i.test(navigator.userAgent);
+//imweb fix
+const isIE = !_ExecutionEnvironment.canUseDOM ? false : /Trident/i.test(navigator.userAgent);
 const FLEX_AUTO = '1 1 auto';
 const FLEX_INITIAL = '0 1 auto';
 
@@ -113,7 +120,7 @@ function defaultFlexExpansion (style, result) {
   const shrink = style.flexShrink || 1;
   const basis = style.flexBasis || 'auto';
   let flex;
-  
+
   if (grow === 'auto') {
     flex = FLEX_AUTO;
   } else if (grow === 'initial') {

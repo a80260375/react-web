@@ -26,10 +26,19 @@ function _bundle(argv, config, resolve, reject) {
 
   var webpackConfig = require(config.getWebpackConfig(argv[1]));
   var compiler = webpack(webpackConfig);
-  compiler.run(function(err, stats) {
+  /*compiler.run(function(err, stats) {
 
     var options = {
-      colors: true
+      colors: true,
+    };
+    console.log(stats.toString(options));
+    resolve(stats);
+  });*/
+
+  compiler.watch({}, function(err, stats) {
+
+    var options = {
+      colors: true,
     };
     console.log(stats.toString(options));
     resolve(stats);
