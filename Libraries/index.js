@@ -17,9 +17,6 @@ export * from 'react';
 
 //imweb fix
 import ReactDOMServer from 'react-dom/server';
-console.log('\n11111111111111111111');
-console.log(ReactDOMServer);
-console.log('\n11111111111111111111');
 export ReactDOMServer from 'react-dom/server';
 
 // Components
