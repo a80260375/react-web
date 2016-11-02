@@ -12,8 +12,8 @@
 import React, { Component, PropTypes } from 'react';
 import View from 'ReactView';
 import StyleSheet from 'ReactStyleSheet';
-import assign from 'domkit/appendVendorPrefix';
-import insertKeyframesRule from 'domkit/insertKeyframesRule';
+import assign from '../Utilties/appendVendorPrefix';
+import insertKeyframesRule from '../Utilties/insertKeyframesRule';
 import { Mixin as NativeMethodsMixin } from 'NativeMethodsMixin';
 import mixin from 'react-mixin';
 import autobind from 'autobind-decorator';
