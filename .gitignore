@@ -30,3 +30,4 @@ project.xcworkspace
 lib/
 node_modules/
 .idea/
+*.tern-port
