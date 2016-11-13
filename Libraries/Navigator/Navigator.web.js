@@ -25,10 +25,12 @@ import View from 'ReactView';
 import clamp from './polyfills/clamp';
 import flattenStyle from 'ReactFlattenStyle';
 import invariant from 'fbjs/lib/invariant';
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
 import rebound from 'rebound';
 import createHistory from 'history/lib/createHashHistory';
 
-let history = createHistory();
+let history = _ExecutionEnvironment.canUseDOM ? createHistory() : {};
+
 let _unlisten;
 
 // TODO: this is not ideal because there is no guarantee that the navigator
@@ -284,6 +286,7 @@ let Navigator = React.createClass({
   },
 
   componentWillMount: function() {
+    return;
     // TODO(t7489503): Don't need this once ES6 Class landed.
     this.__defineGetter__('navigationContext', this._getNavigationContext);
 

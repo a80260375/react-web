@@ -15,10 +15,6 @@ extendCreateElement(React);
 // React
 export * from 'react';
 
-//imweb fix
-import ReactDOMServer from 'react-dom/server';
-export ReactDOMServer from 'react-dom/server';
-
 // Components
 export ActivityIndicatorIOS from 'ReactActivityIndicator';
 export ActivityIndicator from 'ReactActivityIndicator';
@@ -28,7 +24,7 @@ export Image from 'ReactImage';
 export ListView from 'ReactListView';
 export Linking from 'ReactLinking';
 export Modal from 'ReactModal';
-//export Navigator from 'ReactNavigator';
+export Navigator from 'ReactNavigator';
 export PickerIOS from 'ReactPicker';
 export Picker from 'ReactPicker';
 export ProgressViewIOS from 'ReactProgressView';
@@ -60,7 +56,7 @@ export Alert from 'ReactAlert';
 export AlertIOS from 'ReactAlert';
 export Animated from 'ReactAnimated';
 export AppRegistry from 'ReactAppRegistry';
-//export AsyncStorage from 'ReactAsyncStorage';
+export AsyncStorage from 'ReactAsyncStorage';
 export Dimensions from 'ReactDimensions';
 export Easing from 'animated/lib/Easing';
 export InteractionManager from 'ReactInteractionManager';

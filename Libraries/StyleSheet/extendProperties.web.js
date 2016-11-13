@@ -5,7 +5,8 @@
  */
 'use strict';
 
-import getVendorPropertyName from 'domkit/getVendorPropertyName';
+import getVendorPropertyName from '../Utilties/getVendorPropertyName';
+import builtinStyle from '../Utilties/builtinStyle';
 import CSSProperty from 'CSSProperty';
 
 //imweb fix

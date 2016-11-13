@@ -9,8 +9,8 @@
 'use strict';
 
 import Promise from 'ReactPromise';
-var localStorage = window.localStorage;
-
+var localStorage = _ExecutionEnvironment.canUseDOM ? window.localStorage : {};
+import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
 /**
  * Overwrites obj1's values with obj2's and adds obj2's if non existent in obj1
  *
