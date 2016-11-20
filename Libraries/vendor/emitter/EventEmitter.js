@@ -17,7 +17,7 @@
  */
 
 import EmitterSubscription from 'ReactEmitterSubscription';
-import ErrorUtils from 'ReactErrorUtils';
+import ErrorUtils from 'ErrorUtils';
 import EventSubscriptionVendor from 'ReactEventSubscriptionVendor';
 import emptyFunction from 'fbjs/lib/emptyFunction';
 import invariant from 'fbjs/lib/invariant';
