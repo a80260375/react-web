@@ -82,7 +82,7 @@ import _ExecutionEnvironment from 'fbjs/lib/ExecutionEnvironment';
         e
       );
     };
-    global.ErrorUtils.setGlobalHandler(onError);
+    ErrorUtils.setGlobalHandler(onError);
   }
 
   setupErrorGuard();
